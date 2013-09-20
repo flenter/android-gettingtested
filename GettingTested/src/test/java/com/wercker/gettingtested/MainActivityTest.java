@@ -1,7 +1,44 @@
 package com.wercker.gettingtested;
 
-/**
- * Created by jacco on 9/20/13.
- */
+import android.widget.TextView;
+
+import org.junit.Assert;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.robolectric.Robolectric;
+import org.robolectric.RobolectricTestRunner;
+
+
+@RunWith(RobolectricTestRunner.class)
 public class MainActivityTest {
+//    private android.widget.TextView results;
+
+//    @Before
+//    public void setUp() throws Exception {
+//        activity = new MainActivity();
+//        activity.onCreate(null);
+////        results = activity.findViewById(R.layout.activity_main);
+//    }
+
+    @Test
+    public void shouldWelcome() throws Exception {
+//        String resultsText = results.getText().toString();
+//        assertThat(resultsText, equalTo("Hello world!"));
+        MainActivity activity;
+        activity = Robolectric.buildActivity(MainActivity.class).create().get();
+        Assert.assertNotNull(activity);
+//        activity.getText()
+        TextView tView;
+
+        tView = (TextView) activity.findViewById(R.id.introText);
+        Assert.assertNotNull(tView);
+
+        String introText;
+        introText = tView.getText().toString();
+        Assert.assertNotNull(introText);
+
+        Assert.assertTrue("Check intro text", introText.equals("Hello world"));
+
+
+    }
 }
