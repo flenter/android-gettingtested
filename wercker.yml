@@ -7,20 +7,26 @@ build:
         filter: sysimg-18
 
     - script:
-        name: show base information
+        name: setup emulator
         code: |
-          gradle -v
-          echo ANDROID_HOME
-          echo ANDROID_BUILD_TOOLS
-          echo ANDROID_UPDATE_FILTER
+          echo no | android create avd --force -n test -t $ANDROID_TARGET --abi $ANDROID_ABI
+          emulator -avd test -no-skin -no-audio -no-window &
+          ./wait_for_emulator.sh
+    # - script:
+    #     name: show base information
+    #     code: |
+    #       gradle -v
+    #       echo ANDROID_HOME
+    #       echo ANDROID_BUILD_TOOLS
+    #       echo ANDROID_UPDATE_FILTER
 
-    - script:
-        name: gradle robolectric
-        code: |
-          export
-          gradle --full-stacktrace -q --project-cache-dir=$WERCKER_CACHE_DIR robolectric
-    # A step that executes `gradle build` command
-    - script:
-        name: run gradle
-        code: |
-          gradle --full-stacktrace -q --project-cache-dir=$WERCKER_CACHE_DIR build
+    # - script:
+    #     name: gradle robolectric
+    #     code: |
+    #       export
+    #       gradle --full-stacktrace -q --project-cache-dir=$WERCKER_CACHE_DIR robolectric
+    # # A step that executes `gradle build` command
+    # - script:
+    #     name: run gradle
+    #     code: |
+    #       gradle --full-stacktrace -q --project-cache-dir=$WERCKER_CACHE_DIR build
