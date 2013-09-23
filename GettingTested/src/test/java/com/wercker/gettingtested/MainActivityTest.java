@@ -22,14 +22,12 @@ public class MainActivityTest {
 
     @Test
     public void shouldWelcome() throws Exception {
-//        String resultsText = results.getText().toString();
-//        assertThat(resultsText, equalTo("Hello world!"));
+
         MainActivity activity;
         activity = Robolectric.buildActivity(MainActivity.class).create().get();
         Assert.assertNotNull(activity);
-//        activity.getText()
-        TextView tView;
 
+        TextView tView;
         tView = (TextView) activity.findViewById(R.id.introText);
         Assert.assertNotNull(tView);
 
@@ -38,7 +36,6 @@ public class MainActivityTest {
         Assert.assertNotNull(introText);
 
         Assert.assertTrue("Check intro text", introText.equals("Hello world"));
-
 
     }
 }
