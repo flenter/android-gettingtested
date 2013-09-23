@@ -17,6 +17,7 @@ build:
     - script:
         name: gradle robolectric
         code: |
+          export
           gradle --full-stacktrace -q --project-cache-dir=$WERCKER_CACHE_DIR robolectric
     # A step that executes `gradle build` command
     - script:
