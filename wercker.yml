@@ -10,5 +10,6 @@ build:
     - script:
         name: run gradle connectedInstrumentTest
         code: |
-          gradle cIT 
+          gradle cIT -q
+          cat gettingstartd/build/instrumentTest-results/connected/TEST-wercker\(AVD\)\ -\ 4.3-GettingTested-Main.xml
 
