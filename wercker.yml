@@ -6,6 +6,7 @@ build:
     - script: 
         name: do research 
         code: |
+          ls -la GettingTested
           ls -la GettingTested/build
           ls -la GettingTested/build/instrumentTest-results
           fail_no
