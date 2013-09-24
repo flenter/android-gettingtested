@@ -3,9 +3,9 @@ box: wercker/android
 build:
   # The steps that will be executed on build
   steps:
-    - android-sdk-update:
+    - flenter/android-sdk-update:
         filter: sysimg-18
-    - setup-android-emulator:
+    - flenter/setup-android-emulator:
         target: android-18
     - script:
         name: run gradle connectedInstrumentTest
