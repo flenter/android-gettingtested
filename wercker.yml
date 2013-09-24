@@ -6,9 +6,9 @@ build:
     - script: 
         name: do research 
         code: |
-          ls -la gettingtested/build
-          ls -la gettingtested/build/instrumentTest-results
-          fail_now
+          ls -la GettingTested/build
+          ls -la GettingTested/build/instrumentTest-results
+          fail_no
           
     - android-sdk-update:
         filter: sysimg-18
