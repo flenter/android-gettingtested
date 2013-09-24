@@ -3,15 +3,17 @@ box: wercker/android
 build:
   # The steps that will be executed on build
   steps:
-    - android-sdk-update:
+    - flenter/android-sdk-update:
         filter: sysimg-18
 
-    - script:
-        name: setup emulator
-        code: |
-          echo no | android create avd --force -n test -t android-18 --abi armeabi-v7a
-          emulator -avd test -no-skin -no-audio -no-window  & 
-          ./wait_for_emulator.sh
+    - flenter/setup-android-emulator:
+        target: android-18
+#    - script:
+#        name: setup emulator
+#        code: |
+#          echo no | android create avd --force -n test -t android-18 --abi armeabi-v7a
+#          emulator -avd test -no-skin -no-audio -no-window  & 
+#          ./wait_for_emulator.sh
     - script:
         name: run gradle connectedInstrumentTest
         code: |
