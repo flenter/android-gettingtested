@@ -3,14 +3,6 @@ box: wercker/android
 build:
   # The steps that will be executed on build
   steps:
-    - script: 
-        name: do research 
-        code: |
-          ls -la GettingTested
-          ls -la GettingTested/build
-          ls -la GettingTested/build/instrumentTest-results
-          fail_no
-          
     - android-sdk-update:
         filter: sysimg-18
     - setup-android-emulator:
@@ -20,4 +12,10 @@ build:
         code: |
           gradle cIT -q
           cat gettingtested/build/instrumentTest-results/connected/TEST-wercker\(AVD\)\ -\ 4.3-GettingTested-Main.xml
+  after-steps:
+    - script:
+        name: check build folder
+        code: |
+          ls -la GettingTested/build/instrumentTest-results/connected/
+          cat GettingTested/build/instrumentTest-results/connected/TEST-wercker\(AVD\)\ -\ 4.3-GettingTested-Main.xml
 
