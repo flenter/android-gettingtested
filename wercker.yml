@@ -10,7 +10,7 @@ build:
         name: setup emulator
         code: |
           echo no | android create avd --force -n test -t android-18 --abi x86
-          emulator -avd test -no-skin -no-audio -no-window --enable-kvm & 
+          emulator -avd test -no-skin -no-audio -no-window  & 
           ./wait_for_emulator.sh
     - script:
         name: run gradle connectedInstrumentTest
