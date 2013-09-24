@@ -17,5 +17,6 @@ build:
         name: check build folder
         code: |
           ls -la GettingTested/build/instrumentTest-results/connected/
-          cat GettingTested/build/instrumentTest-results/connected/TEST-wercker\(AVD\)\ -\ 4.3-GettingTested-Main.xml
+          cp GettingTested/build/instrumentTest-results/connected/TEST-wercker\(AVD\)\ -\ 4.3-GettingTested-Main.xml $WERCKER_REPORT_ARTIFACTS_DIR
+          
 
