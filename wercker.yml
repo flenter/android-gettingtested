@@ -10,5 +10,5 @@ build:
     - script:
         name: run gradle connectedInstrumentTest
         code: |
-          gradle cIT -q --full-stacktrace
+          gradle cIT 
 
