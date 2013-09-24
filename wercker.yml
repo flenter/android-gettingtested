@@ -9,7 +9,7 @@ build:
     - script:
         name: setup emulator
         code: |
-          echo no | android create avd --force -n test -t android-18 --abi x86
+          echo no | android create avd --force -n test -t android-18 --abi armeabi-v7a
           emulator -avd test -no-skin -no-audio -no-window  & 
           ./wait_for_emulator.sh
     - script:
