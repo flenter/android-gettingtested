@@ -3,6 +3,12 @@ box: wercker/android
 build:
   # The steps that will be executed on build
   steps:
+    - script:
+        name: "show envirionemnt varaibles..."
+        code: |
+          export
+          echo "------"
+          cat /etc/environment
     - android-sdk-update:
         filter: sysimg-18
     - setup-android-emulator:
@@ -12,11 +18,4 @@ build:
         code: |
           gradle cIT
           cat gettingtested/build/instrumentTest-results/connected/TEST-wercker\(AVD\)\ -\ 4.3-GettingTested-Main.xml
-  after-steps:
-    - script:
-        name: check build folder
-        code: |
-          ls -la GettingTested/build/instrumentTest-results/connected/
-          cp GettingTested/build/instrumentTest-results/connected/TEST-wercker\(AVD\)\ -\ 4.3-GettingTested-Main.xml $WERCKER_REPORT_ARTIFACTS_DIR/jshint.xml
-          
 
