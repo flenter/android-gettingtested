@@ -9,6 +9,7 @@ build:
           export
           echo "------"
           cat /etc/environment
+          gradle -v
     - android-sdk-update:
         filter: sysimg-18
     - setup-android-emulator:
