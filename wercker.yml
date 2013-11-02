@@ -8,7 +8,7 @@ build:
     - android-sdk-update:
         filter: armeabi-v7a
     - setup-android-emulator:
-        target: android-18
+        target: android-19
     - script:
         name: run gradle connectedInstrumentTest
         code: |
