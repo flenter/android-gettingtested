@@ -5,8 +5,6 @@ build:
   steps:
     - android-sdk-update:
         filter: sysimg-18 
-    - android-sdk-update:
-        filter: armeabi-v7a
     - setup-android-emulator:
         target: android-18
     - script:
