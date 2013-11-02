@@ -4,7 +4,9 @@ build:
   # The steps that will be executed on build
   steps:
     - flenter/android-sdk-update:
-        filter: sysimg-18
+        filter: sysimg-18 
+    - flenter/android-sdk-update:
+        filter: armeabi-v7a
     - flenter/setup-android-emulator:
         target: android-18
     - script:
