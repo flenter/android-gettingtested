@@ -2,7 +2,7 @@
 
 set timeout -1;
 
-spawn android update sdk all
+spawn android update sdk -all
 expect {
     "Do you accept the license" { exp_send "y\r" ; exp_continue }
     eof
