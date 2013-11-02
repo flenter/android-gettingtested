@@ -7,8 +7,10 @@ build:
         name: show environment
         code: |
           export
-    - android-sdk-update:
-        filter: "platform-tools,android-19,android-18,android-17,sysimg-19,extra-android-support,extra-android-m2repository,sys-img18"
+          cd /home/ubuntu/android-sdk-linux
+          expect -f $WERCKER_SOURCE_DIR/android-update.exp "platform-tools,android-19,android-18,android-17,sysimg-19,extra-android-support,extra-android-m2repository,sys-img18"
+    # - android-sdk-update:
+    #     filter: "platform-tools,android-19,android-18,android-17,sysimg-19,extra-android-support,extra-android-m2repository,sys-img18"
     - setup-android-emulator:
         target: android-18
     - script:
