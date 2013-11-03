@@ -8,7 +8,7 @@ build:
         code: |
           export
           cd /home/ubuntu/android-sdk-linux
-          expect -f $WERCKER_SOURCE_DIR/android-update.exp "tools,platform-tools,android-19,android-18,android-17,sysimg-18,extra-android-support,extra-android-m2repository"
+          expect -f $WERCKER_SOURCE_DIR/android-update.exp "sysimg-18"
 
           android list targets
     # - android-sdk-update:
