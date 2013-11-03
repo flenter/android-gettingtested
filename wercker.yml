@@ -9,12 +9,12 @@ build:
         name: show environment
         code: |
           export
-          # cd /home/ubuntu/android-sdk-linux
-          # expect -f $WERCKER_SOURCE_DIR/android-update.exp "sysimg-18"
+          cd /home/ubuntu/android-sdk-linux
+          expect -f $WERCKER_SOURCE_DIR/android-update.exp "sysimg-18"
 
           android list targets
-    - setup-android-emulator:
-        target: android-18
+    # - setup-android-emulator:
+    #     target: android-18
     # - script:
     #     name: setup emulator
     #     code: |
