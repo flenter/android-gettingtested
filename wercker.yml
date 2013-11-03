@@ -4,7 +4,7 @@ build:
   # The steps that will be executed on build
   steps:
     - android-sdk-update:
-        filter: "sysimg-18"
+        filter: "sysimg-19"
     # - script:
     #     name: show environment
     #     code: |
@@ -14,7 +14,7 @@ build:
 
     #       android list targets
     - setup-android-emulator:
-        target: android-18
+        target: android-19
     # - script:
     #     name: setup emulator
     #     code: |
