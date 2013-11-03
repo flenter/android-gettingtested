@@ -3,16 +3,16 @@ box: wercker/android@0.0.17
 build:
   # The steps that will be executed on build
   steps:
+    - android-sdk-update:
+        filter: "sys-img18"
     - script:
         name: show environment
         code: |
           export
-          cd /home/ubuntu/android-sdk-linux
-          expect -f $WERCKER_SOURCE_DIR/android-update.exp "sysimg-18"
+          # cd /home/ubuntu/android-sdk-linux
+          # expect -f $WERCKER_SOURCE_DIR/android-update.exp "sysimg-18"
 
           android list targets
-    # - android-sdk-update:
-    #     filter: "platform-tools,android-19,android-18,android-17,sysimg-19,extra-android-support,extra-android-m2repository,sys-img18"
     - setup-android-emulator:
         target: android-18
     # - script:
