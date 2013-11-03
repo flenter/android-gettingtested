@@ -4,7 +4,7 @@ build:
   # The steps that will be executed on build
   steps:
     - android-sdk-update:
-        filter: "sys-img18"
+        filter: "sysimg-18"
     # - script:
     #     name: show environment
     #     code: |
