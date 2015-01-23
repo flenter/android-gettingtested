@@ -4,7 +4,7 @@ build:
   # The steps that will be executed on build
   steps:
     - android-sdk-update:
-        filter: "sysimg-19"
+        filter: "sys-img-armeabi-v7a-android-19"
     # - script:
     #     name: show environment
     #     code: |
